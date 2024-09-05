@@ -1,17 +1,17 @@
-import {  memo } from 'react';
+import { memo } from "react";
 
-import MainContent from './MainContent/MainContent';
-import Forecast from './Forecast/Forecast';
+import MainContent from "./MainContent/MainContent";
+import Forecast from "./Forecast/Forecast";
 
-import './Day.css'
+import "./Day.scss";
 
 function Day() {
-    return ( 
+    return (
         <div className="dayContainer">
-            <MainContent/>
-            <Forecast/>
+            <MainContent />
+            <Forecast />
         </div>
-     );
+    );
 }
 
 export default memo(Day);

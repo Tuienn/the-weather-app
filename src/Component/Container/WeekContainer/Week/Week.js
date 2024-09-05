@@ -1,46 +1,46 @@
-import { memo, useContext } from 'react';
+import { memo, useContext } from "react";
 
-import { SelectContext } from '../../Container';
-import { getLastOfArray } from '../../../../Handle/groupDay';
+import { SelectContext } from "../../Container";
+import { getLastOfArray } from "../../../../Handle/groupDay";
 
-import DayItem from './DayItem/DayItem';
+import DayItem from "./DayItem/DayItem";
 
-import './Week.css'
+import "./Week.scss";
 function Week() {
     const valueContext = useContext(SelectContext);
-    const weatherDays_general = []
+    const weatherDays_general = [];
 
-    valueContext.weatherDays.map(item => {
-        weatherDays_general.push(getLastOfArray(item))
-    })
+    valueContext.weatherDays.map((item) => {
+        weatherDays_general.push(getLastOfArray(item));
+    });
 
-    const selectDay = valueContext.selectDay
-    const setSelectDay = valueContext.setSelectDay
+    const selectDay = valueContext.selectDay;
+    const setSelectDay = valueContext.setSelectDay;
 
-    const setSelectTime = valueContext.setSelectTime
-    
-    return ( 
+    const setSelectTime = valueContext.setSelectTime;
+
+    return (
         <div className="week">
             <div className="title">WEEKLY FORECAST</div>
-            {weatherDays_general.map((dayItem, index)=>{
-                let primary=false;
-                if(selectDay===index){
-                    primary=true;
+            {weatherDays_general.map((dayItem, index) => {
+                let primary = false;
+                if (selectDay === index) {
+                    primary = true;
                 }
 
-                return(
-                    <DayItem 
-                        key={index} 
-                        dayItem={dayItem} 
-                        setSelectDay={()=>{
-                            setSelectDay(index)
-                            setSelectTime(0)
+                return (
+                    <DayItem
+                        key={index}
+                        dayItem={dayItem}
+                        setSelectDay={() => {
+                            setSelectDay(index);
+                            setSelectTime(0);
                         }}
-                        primary = {primary}
+                        primary={primary}
                     />
-                )
+                );
             })}
-        </div> 
+        </div>
     );
 }
-export default memo(Week)
+export default memo(Week);

@@ -1,11 +1,12 @@
-import reactLogo from '../../../Assets/reactLogo.png'
-import './NoSearch.css'
+import reactLogo from "../../../Assets/reactLogo.png";
+import "./NoSearch.scss";
 function NoSearch() {
-    return ( 
-        <div className='NoSearch'>
+    return (
+        <div className="NoSearch">
             <img src={reactLogo} alt="" />
-            Continuously updated and accurate weather data for over 200,000 cities
-        </div> 
+            Continuously updated and accurate weather data for over 200,000
+            cities
+        </div>
     );
 }
 
